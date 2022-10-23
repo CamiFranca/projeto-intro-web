@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+body {
+    overflow-x: hidden;
+    /*tira a barra de rolagem das laterais*/
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        /*define as areas principais da pagina*/
+        "cabecalho" "cabecalho" "cabecalho"
+        "corpo" "corpo" "corpo"
+        "rodape" "rodape" "rodape";
+    /* height: 100vh; */
+    background-color: #ffffff;
+    color: #414141;
+}
+
+#cabecalho {
+    grid-area: cabecalho;
+    /*avisa quem é para definir a area*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.486);
+    /*sombreado na borda inferior*/
+    width: 100vw;
+    /*ocupa a largura total da pagina*/
+    height: 16vh;
+    /*altura do cabeçalho*/
+
+}
+
+.logo {
+    height: 10vh;
+    /*a imagem ocupa esse espaço dentro da classe*/
+
+}
+
+#corpo {
+    display: grid;
+    /*foi chamado para poder usar o gap*/
+    grid-area: corpo;
+    /*avisa quem é para definir a area*/
+    /* margin: 0 auto; */
+    width: 100vw;
+    /*Em qualquer tela, o site vai ocupar 100% da largura*/
+    gap: 32px;
+    /*separa a borda das caixas uma da outra*/
+    margin: 0 auto 8vh auto;
+
+}
+.meusItens{
+    display: flex;
+    gap:30px;
+    flex-direction: column;
+}
+
+#rodape {
+    grid-area: rodape;
+    /*avisa quem é para definir a area*/
+    background-color: #FFB957;
+    width: 100vw;
+    /*define novamente porque se trata de outa area do container*/
+    height: 10vh;
+    /*altura do rodapé*/
+    display: flex;
+    align-items: center;
+    /*centaliza os itens na altura centro*/
+}
+
+.textoImagem {
+    /*abraça tudo que está dentro da borda*/
+    display: flex;
+    flex-direction: column;
+    /*organiza uma abaixo da outra*/
+    align-items: center;
+    /*centraliza em relação a largura da página */
+    justify-content: space-between;
+    /*a distancia entre o texto e a imagem*/
+    /* border: 2px solid #FAC481; */
+    background-color: #fadfa94a;
+    width: 60%;
+    /*a caixa ocupa 60% do tamanho total da pagina, o que dar folga nas laterais da pag.*/
+    margin: 0 auto;
+    /*descola a borda da caixa das laterais*/
+    gap: 3vh;
+    /*separa o titulo do protetor das outras informações*/
+    /* padding: 24px;/*afastamentos da borda*/
+    /*margin: 32px; */
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.486);
+    /*sombreamento ao redor das caixas*/
+    font-family: sans-serif;
+    border-radius: 8px;
+    /*curva das bordas*/
+    padding: 3vh;
+    /*afasta a imagem e o texto das bordas laterais*/
+}
+/* #caixa1{
+    display: flex;
+} */
+
+.box-header {
+    /*filha do header, abraça o label e o nome protetor*/
+    justify-content: space-between;
+    /*forma como ambos são separados*/
+    align-items: center;
+    /*Coloca os itens no centro da altura*/
+    display: flex;
+    width: 60%;
+    /*tem 60% do tamanho total do seu pai, o header*/
+    height: 5vh;
+    /*PERGUNTAR A LAIS SE AINDA PRECISA DISSO*/
+}
+
+.titulo-site{
+    text-transform: uppercase;
+    font-size: 3.5vh;
+    /*fonte da marca*/
+    font-weight: bolder;
+    /* coloca negrito na fonte */
+    color: #9BCFAA;
+
+}
+
+
+.box-image-texto {
+    /*Não abraça o título nome dos protetores*/
+    display: flex;
+    gap: 5px;
+    /*afasta o texto da foto do protetor*/
+    align-items: center;
+}
+
+.box-image-texto img { 
+    /*Define o tamanho dos protetores*/
+    width: 13vw;
+}
+/* #primeira-imagem{ CONSERTO:coloda a imagem needs do lado esquerdo( LAÍS)
+    align-self: flex-start;
+} */
+.imagem-input{
+display: flex;
+justify-content: center;
+position: relative;
+width: 100%;
+align-items: end;
+
+}
+.imagem-input > img{
+width: 100%;
+
+}
+.pesquisa  {
+    /*abraça o input e o buttom*/
+    position: absolute;
+    display: flex;
+    border: none;
+    height: 4vh;
+    gap: 5px;
+    /*a distancia entre o dois*/
+    justify-content: center;
+    margin-bottom: 15px;
+
+    /*deixa eles no canto da classe dentro do header*/
+
+
+}
+
+button {
+    min-width: 6vw;
+    /*define a largura do botão*/
+    border: none;
+    /*tira a borda*/
+    box-shadow: 0 0 3px;
+    /*sombra*/
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+button img {
+    /*a lupa*/
+    height: 20px;
+    /* width: 10px; */
+
+
+}
+
+input {
+    /*altura do input*/
+    /* height: 4vh; */
+    border: none;
+    box-shadow: 0 0 3px;
+    width:30vw ;
+    border-radius: 5px;
+}
+
+a {
+    color: #414141;
+}
+
+
+a:hover {
+    color: #A1D9B1;
+    /*muda a cor dos nomes dos protetores quando passa o mouse*/
+
+}
+
+.imagens-footer {
+    /*abraça todo o footer, menos o meu nome*/
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    /*distancia entre as imagens*/
+    height: 100%;
+    /*a imagem ocupam 100% dessa div*/
+    align-items: center;
+
+
+}
+
+.imagens-footer img {
+    /*define o tamanho das imagens do rodapé*/
+    max-height: 4vh;
+
+}
+
+.redes-sociais {
+    /*abrange todo o rorapé!*/
+    width: 60%;
+    /*alinha com todo o resto do site que começa os textos nessa posição*/
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*centraliza na largura*/
+    height: 4vh;
+    /*altura do rodapé*/
+
+}
+@media screen  and (max-width:425px){
+
+.box-image-texto{
+flex-direction: column;
+}
+.box-image-texto img { 
+    /*Define o tamanho dos protetores*/
+    width: 45vw;
+   
+}
+.imagem-input > img{
+    min-height: 30vh;
+    object-fit: cover;
+  
+}
+input{
+    min-width: 180px;
+
+}
+button{
+min-width: 40px;
+}
+}
